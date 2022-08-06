@@ -1,0 +1,32 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector:'app-counter',
+  template:`
+  <h3>{{title}}</h3>
+  <!-- <button (click)=" contador = contador + 1 ">➕</button>
+  <span>{{ contador }}</span>
+  <button (click)=" restar() " >➖</button> -->
+
+  <button (click)="modificar(+1)">➕</button>
+  <span>{{ contador }}</span>
+  <button (click)="modificar(-1)" >➖</button>
+  `,
+})
+export class CounterComponentOld{
+
+  public title:string = 'Componente Contador';
+  // Para trabajar el contador
+  public contador:number = 0;
+
+  // restar(){
+  //   this.contador--;
+  // }
+  // sumar = () => this.contador++;
+
+  modificar = (cantidad:number) => {
+    this.contador += cantidad;
+  }
+
+
+}
